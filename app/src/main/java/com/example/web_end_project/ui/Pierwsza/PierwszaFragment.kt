@@ -1,4 +1,4 @@
-package com.example.web_end_project.ui.home
+package com.example.web_end_project.ui.Pierwsza
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.web_end_project.databinding.FragmentHomeBinding
 
-class HomeFragment : Fragment() {
+class PierwszaFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
 
@@ -22,14 +22,14 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+        val pierwszaViewModel =
+            ViewModelProvider(this).get(PierwszaViewModel::class.java)
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
+        pierwszaViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root
